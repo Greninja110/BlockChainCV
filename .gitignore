@@ -40,6 +40,15 @@ PROJECT_REPORT.md
 PROJECT_REPORT.txt
 update-contracts.md
 
+# Development/test files
+frontend/public/test-*.html
+frontend/public/force-reconnect.html
+*-simple.jsx
+*-working.jsx
+scripts/quick-register.js
+scripts/register-admin-ganache.js
+scripts/setup-organizer.js
+
 # Images and media
 *.png
 *.jpg
