@@ -1,0 +1,38 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile && node scripts/copy-abis.js",
+    "copy-abis": "node scripts/copy-abis.js",
+    "deploy:local": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:ganache": "npx hardhat run scripts/deploy.js --network ganache",
+    "setup:admin": "npx hardhat run scripts/setup-admin.js --network localhost",
+    "setup:admin:ganache": "npx hardhat run scripts/setup-admin.js --network ganache",
+    "setup:roles": "npx hardhat run scripts/setup-roles.js --network localhost",
+    "node": "npx hardhat node",
+    "frontend:install": "cd frontend && npm install",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "ganache": "npx ganache-cli --deterministic --accounts 10 --host 0.0.0.0 --port 7545 --db ./ganache-db --defaultBalanceEther 1000",
+    "dev": "concurrently \"npm run node\" \"npm run frontend:dev\"",
+    "clean": "npx hardhat clean",
+    "setup:organizer": "npx hardhat run scripts/setup-organizer.js --network ganache",
+    "register:admin": "npx hardhat run scripts/register-admin-ganache.js --network ganache"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "ganache-cli": "^6.12.2",
+    "hardhat": "^2.26.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "ethers": "^6.15.0",
+    "web3": "^4.16.0"
+  }
+}
